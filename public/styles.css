@@ -1,0 +1,224 @@
+*{
+    font-family: matura mt script capitals;
+}
+html, body {
+    margin:  0%;
+    padding: 0%;
+    height: 100%;
+    background-color: #151515;
+
+}
+
+textarea{
+    background-color: burlywood;
+    border-radius: 20%;
+    font-size: 1.875em;
+}
+
+table{
+    margin: auto;
+    width: 25.000em;
+    border: 0.313em solid green;
+    color: #fff;
+}
+
+td{
+    text-align: center;
+    border: 0.250em solid green;
+    height: 3.125em;
+    font-size: 1.875em;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+button, #enterButton, #registerButton{
+    border-radius: 10%;
+    transition: 1s;
+    background-color: yellow;
+    font-size: 0.938em;
+}
+
+button:hover, #enterButton:hover, #registerButton:hover{
+    cursor: pointer;
+    color:aqua;
+    transition: 1s;
+    background-color:violet;
+}
+
+
+#info{
+    left: 0; bottom: 0; /* Левый нижний угол */
+    position: absolute;
+    z-index: 1010;
+    width: 100%; /* Ширина слоя */
+}
+
+.links_class{
+    margin-right: 2em;
+    margin-left: 2em;
+    display: inline-block;
+    font-size: 1.3em;
+    color: gold;
+}
+
+.a_class_vk{
+    color: dodgerblue;
+}
+
+.a_class_vk:hover{
+    color: mediumvioletred;
+}
+
+.a_class_git {
+    color: forestgreen;
+}
+
+ .a_class_git:hover {
+        color: white;
+}
+
+#leftArm{
+    transition: all 0.5s linear;
+}
+
+#leftArm.transform {
+  transform: rotate(-20deg);
+}
+
+#weapon{
+    transition: all 0.5s linear;
+}
+
+#weapon.transform {
+  transform: rotate(-20deg);
+}
+
+
+#game-over, #game-over-overlay {
+
+    margin: auto;
+
+    width: 32.000em;
+
+    height: 30.000em;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    z-index: 1;
+
+    display: none;
+
+}
+
+
+
+#game-over-overlay {
+
+    background-color: black;
+
+    opacity: .5;
+
+}
+
+
+
+#game-over {
+
+    height: 12.500em;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+
+#game-over h1 {
+
+    font-size: 3em;
+
+    font-family: sans-serif;
+
+}
+
+
+
+#game-over button {
+
+    font-size: 1.5em;
+
+}
+
+#p_prldr{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right:0;
+    bottom:0;
+    background: #9A12B3;
+    z-index: 30;}
+     
+    .contpre small{font-size:1.563em;}
+     
+    .contpre{
+    width: 15.625em;
+    height: 6.250em;
+    position: absolute;
+    left: 50%;top: 48%;
+    margin-left:-7.813em;
+    margin-top:-4.688em;
+    color:#fff;
+    font-size:2.500em;
+    letter-spacing:-0.125em;
+    text-align:center;
+    line-height:2.188em;
+}
+     
+    #p_prldr .svg_anm {
+    position: absolute;
+    width: 2.563em;
+    height: 2.563em;
+    background: url(img/oval.png) center center no-repeat;
+    background-size:2.563em;    
+    margin: -1.000em 0 0 -1.000em;
+}
+
+.chosePicture img{
+    cursor: pointer;
+   transition: 0.5s;
+}
+
+.chosePicture img:hover{
+    cursor: pointer;
+    border: 1px solid #d3d3d3;
+    transform: translate(-15px, -15px);
+    box-shadow: 10px 15px 15px #d3d3d3;
+}
+
+.word-wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.right{
+background: limegreen;
+}
+
+.wrong{
+    background: rgb(255, 107, 107);
+}
+
+
