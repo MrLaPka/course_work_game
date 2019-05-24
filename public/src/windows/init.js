@@ -5,23 +5,9 @@ import createReturnButton from "../buttons/createReturnButton";
 
 export default class init {
   startWindowRender() {
-    this.startFaerbol = new Image();
-    this.startFaerbol.create(
-      "img/rotate.gif",
-      "31.250em",
-      "43.750em",
-      undefined,
-      "startFaerbol",
-      "auto"
-    );
-    this.startFaerbol.positioning("1010", "block");
     this.startMenu = new objectOnThePage("div");
     this.startMenu.create(100 + "%", 100 + "%", undefined, "startMenu");
-    this.startMenu.pointBack(
-      "center",
-      "url(img/fon_lenty_radiaciya_opasnost_stena_18526_1280x1280[1].jpg)",
-      "100%"
-    );
+    this.startMenu.pointBack("center", "url(img/mainBackground.jpg) center center fixed", "cover");
     document.body.appendChild(this.startMenu.div);
   }
 
@@ -34,6 +20,14 @@ export default class init {
       "nameOfGame",
       undefined,
       "MONSTER KILL"
+    );
+    this.nameOfGame.pointBack(
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      "black"
     );
     this.startMenu.appendChild(this.nameOfGame);
     this.playButton = new objectOnThePage("button");
@@ -66,26 +60,44 @@ export default class init {
       "A screenshot of gameplay"
     );
     this.screenButton.setPaddings("1.48em");
-      this.startMenu.appendChild(this.screenButton);
-      this.startMenu.appendChild(this.startFaerbol);
+    this.startMenu.appendChild(this.screenButton);
   }
 
   audioCreate() {
     let enabled;
-    let innerAudio = `<audio src="audio/BGsound.mp3" width="0" height="0" align = "center" id = "audiomain" autoplay="autoplay"></audio>`;
+    let innerAudio = `<audio src="audio/BGsound.mp3" width="0" height="0" align = "center" id = "audiomain" autoplay="autoplay" loop></audio>`;
     let audio = new objectOnThePage("div");
-    audio.create(undefined, undefined, innerAudio);
-      this.startMenu.appendChild(audio);
+    audio.create("0", "0", innerAudio);
+    this.startMenu.appendChild(audio);
+
+    const firstRunAudio = `<object width="0" height="0" align="center" id = "mainaudio">
+
+<param name="movie" value="audio/BGsound.mp3">
+<embed src="audio/BGsound.mp3"
+autostart="true"
+width="0"
+height="0"
+align="center"
+type="audio/mid"
+pluginspage="http://www.macromedia.com/go/getflashplayer"
+loop = "True">
+</object>`;
+
+    const firstAudioDiv = new objectOnThePage("div");
+    firstAudioDiv.create("0", "0", firstRunAudio);
+    this.startMenu.appendChild(firstAudioDiv);
     let AudioOnOff = new objectOnThePage("button");
     if (document.getElementById("disabled")) {
+      if (document.getElementById("mainaudio"))
+        document.getElementById("mainaudio").remove();
       console.log("disabled");
       if (document.getElementById("audiomain")) {
         document.getElementById("audiomain").volume = 0;
       }
       enabled = false;
       AudioOnOff.create(
-        "3.125em",
-        "1.563em",
+        "4.125em",
+        "2.563em",
         "&#128263",
         "disabled",
         undefined,
@@ -93,14 +105,16 @@ export default class init {
         "firstButton"
       );
     } else if (document.getElementById("enabled")) {
+      if (document.getElementById("mainaudio"))
+        document.getElementById("mainaudio").remove();
       console.log("enabled");
       if (document.getElementById("audiomain")) {
         document.getElementById("audiomain").volume = 1;
       }
       enabled = true;
       AudioOnOff.create(
-        "3.125em",
-        "1.563em",
+        "4.125em",
+        "2.563em",
         "&#128266",
         "enabled",
         undefined,
@@ -110,14 +124,15 @@ export default class init {
     } else {
       enabled = true;
       AudioOnOff.create(
-        "3.125em",
-        "1.563em",
+        "4.125em",
+        "2.563em",
         "&#128266",
         "enabled",
         undefined,
         undefined,
         "firstButton"
       );
+
     }
 
     if (document.getElementsByClassName("firstButton")[0]) {
@@ -140,7 +155,7 @@ export default class init {
 
     AudioOnOff.positioning("1000", undefined, "absolute");
     AudioOnOff.setDistance("0", undefined, "0");
-    AudioOnOff.addEventListener("click", function() {
+    AudioOnOff.addEventListener("click", () => {
       console.log("click");
       if (enabled) {
         AudioOnOff.create(
@@ -157,6 +172,8 @@ export default class init {
           document.getElementById("audiomain").volume = 0;
         if (document.getElementById("mortalCombat"))
           document.getElementById("mortalCombat").volume = 0;
+        if (document.getElementById("mainaudio"))
+          document.getElementById("mainaudio").remove();
       } else {
         AudioOnOff.create(
           undefined,
@@ -176,13 +193,15 @@ export default class init {
         if (document.getElementsByClassName("toRunAudio")[0]) {
           document.getElementsByClassName("toRunAudio")[0].remove();
         }
+        firstAudioDiv.create("0", "0", firstRunAudio);
+        this.startMenu.appendChild(firstAudioDiv);
       }
     });
     document.body.appendChild(AudioOnOff.div);
-    }
-    
+  }
+
   createScore() {
-    this.scoreButton.addEventListener("click", () =>{
+    this.scoreButton.addEventListener("click", () => {
       let additionalWindow = new objectOnThePage("div");
       additionalWindow.create("100%", "100%", undefined, "additionalWindow");
       additionalWindow.positioning(undefined, undefined, "absolute");
@@ -190,7 +209,6 @@ export default class init {
       this.playButton.positioning(undefined, "none");
       this.scoreButton.positioning(undefined, "none");
       document.getElementById("nameOfGame").style.display = "none";
-      this.startFaerbol.positioning(undefined, "none");
       this.startMenu.positioning(undefined, undefined, "absolute");
 
       const scoreTable = new objectOnThePage("table");
@@ -263,6 +281,8 @@ export default class init {
     this.playButton.addEventListener("click", () => {
       this.startMenu.positioning(undefined, "none", "absolute");
       document.getElementById("info").style.display = "none";
+      document.body.style.background = 'url(img/mainBackground.jpg) center center fixed';
+      document.body.style.backgroundSize = 'cover';
       const eN = new enterName();
       eN.run();
     });

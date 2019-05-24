@@ -78,7 +78,7 @@ export default class enterName {
         "Incorrect name!"
       );
       errorEnter.positioning(undefined, "block");
-      errorEnter.fonts("0.6em", "sans-serif");
+      errorEnter.fonts("1.2em", "sans-serif");
       errorEnter.pointBack(
         undefined,
         undefined,

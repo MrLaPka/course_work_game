@@ -63,8 +63,8 @@ export default class toRun {
 
     if (enabled) {
       AudioOnOff.create(
-        "3.125em",
-        "1.563em",
+        "4.125em",
+        "2.563em",
         "&#128266",
         "enabled",
         undefined,
@@ -73,8 +73,8 @@ export default class toRun {
       );
     } else {
       AudioOnOff.create(
-        "3.125em",
-        "1.563em",
+        "4.125em",
+        "2.563em",
         "&#128263",
         "disabled",
         undefined,

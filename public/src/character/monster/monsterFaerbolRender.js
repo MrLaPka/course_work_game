@@ -9,7 +9,7 @@ export default class monsterFaerbolRender {
     let faerbol = new Image();
     faerbol.create("img/monsterfaerbol1.gif", "10.000em", "4.375em");
     faerbol.positioning("1000", undefined, "absolute");
-    faerbol.setMargins("26.875em", "78.125em");
+    faerbol.setMargins("40em", "78.125em");
     document.getElementById("globalPlayWindow").appendChild(faerbol.div);
     $(faerbol.div).queue(function() {
       setTimeout(function() {

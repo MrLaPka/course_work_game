@@ -50,7 +50,7 @@ export default class chosePictureGeneration {
       let taskWindow = new objectOnThePage("div");
       taskWindow.create(
         "100%",
-        "31.250em",
+        "100%",
         undefined,
         undefined,
         "auto",
@@ -90,6 +90,7 @@ export default class chosePictureGeneration {
           "1.5em"
         );
         task.positioning(1110, "inline-block");
+        task.setMargins('10em');
         taskWindow.appendChild(task);
         numberTask.splice(item, 1);
       }
@@ -111,6 +112,10 @@ export default class chosePictureGeneration {
         let target = event.target;
         while (target !== taskWindow.div) {
           if (target.tagName === "IMG") {
+            if (document.getElementsByClassName("right_picture")[0]) {
+              document.getElementsByClassName("right_picture")[0].className = '';
+            }
+            target.className = 'right_picture';
             if (target.src === String(document.location) + right) {
               target.id = "right";
             } else if (

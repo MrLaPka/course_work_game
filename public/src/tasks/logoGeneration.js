@@ -30,7 +30,7 @@ export default class logoGeneration {
     let taskWindow = new objectOnThePage("div");
     taskWindow.create(
       "100%",
-      "41.250em",
+      "100%",
       undefined,
       undefined,
       "auto",
@@ -70,7 +70,7 @@ export default class logoGeneration {
         "1.5em"
       );
       task.positioning(1110, "inline-block");
-      task.setMargins("4em", "3em");
+      task.setMargins("10em", "3em");
       taskWindow.appendChild(task);
       numberTask.splice(item, 1);
     }
@@ -92,6 +92,10 @@ export default class logoGeneration {
       let target = event.target;
       while (target !== taskWindow.div) {
         if (target.tagName === "IMG") {
+          if (document.getElementsByClassName("right_picture")[0]) {
+            document.getElementsByClassName("right_picture")[0].className = '';
+          }
+          target.className = 'right_picture';
           if (target.src === String(document.location) + rightSrc) {
             target.id = "right";
           } else if (

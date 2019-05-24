@@ -9,7 +9,7 @@ export default class faerbolRender {
     let faerbol = new Image();
     faerbol.create(`${src}`, "10.000em", "4.375em");
     faerbol.positioning("1000", undefined, "absolute");
-    faerbol.setMargins("26.875em", "25.625em");
+    faerbol.setMargins("40em", "25.625em");
     document.getElementById("globalPlayWindow").appendChild(faerbol.div);
     $(faerbol.div).queue(function(){
       setTimeout(function(){

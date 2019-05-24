@@ -16,8 +16,15 @@ export default class taskGeneration {
 
   static generate(bigCapacity) {
     let taskWindow = new objectOnThePage("div");
-    taskWindow.create("32.000em", "25.000em", undefined, undefined, "auto");
-    taskWindow.positioning("1", "block", "absolute", "center");
+    taskWindow.create(
+      "100%",
+      "100%",
+      undefined,
+      undefined,
+      "auto",
+      undefined,
+    );
+    taskWindow.positioning("1110", "block", "absolute", "center");
     taskWindow.pointBack(
       undefined,
       undefined,

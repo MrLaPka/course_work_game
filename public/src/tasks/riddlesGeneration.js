@@ -20,8 +20,15 @@ export default class riddlesGeneration {
       }
 
       let taskWindow = new objectOnThePage("div");
-      taskWindow.create("32.000em", "31.250em", undefined, undefined, "auto");
-      taskWindow.positioning("1", "block", "absolute", "center");
+      taskWindow.create(
+        "100%",
+        "100%",
+        undefined,
+        undefined,
+        "auto",
+        undefined,
+      );
+      taskWindow.positioning("1110", "block", "absolute", "center");
       taskWindow.setDistance("0", "0", "0", "0");
       taskWindow.pointBack(
         undefined,

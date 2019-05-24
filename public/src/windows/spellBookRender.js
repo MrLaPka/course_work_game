@@ -12,15 +12,13 @@ export default class spellBookRender {
       document.getElementById("getDamage").remove();
     }
     this.spellBookMain = new objectOnThePage("div");
-    this.spellBookMain.create("65.625em", "47.000em", undefined, "spellbook");
+    this.spellBookMain.create("65.6em", "46.70em", undefined, "spellbook");
     this.spellBookMain.positioning("1000", undefined, "absolute");
     this.spellBookMain.setMargins("1.250em", "28.125em");
     this.spellBookMain.pointBack(undefined, "url(img/spellbook.png)", "100%");
   }
 
   createСhoice() {
-    if (document.getElementById("audio_book"))
-      document.getElementById("audio_book").remove();
     let pToChoose = new objectOnThePage("p");
     pToChoose.create(
       undefined,
@@ -88,8 +86,6 @@ export default class spellBookRender {
   }
 
   createNormalTasksButtons() {
-    if (document.getElementById("audio_book"))
-      document.getElementById("audio_book").remove();
     this.createHardTasksButtons();
     let puzzleButton = new objectOnThePage("button");
     puzzleButton.create(
@@ -101,7 +97,7 @@ export default class spellBookRender {
       "Guess the puzzle"
     );
     puzzleButton.positioning(undefined, "inline-block");
-    puzzleButton.setMargins("3em", "15.625em");
+    puzzleButton.setMargins("2em", "15.625em");
     puzzleButton.pointBack(undefined, undefined, undefined, "yellow");
     puzzleButton.addEventListener("click", () => {
       const rG = new riddlesGeneration();
@@ -121,7 +117,7 @@ export default class spellBookRender {
       "Who is in the picture"
     );
     pictureTaskButton.positioning(undefined, "inline-block");
-    pictureTaskButton.setMargins("3em", "6.250em");
+    pictureTaskButton.setMargins("2em", "6.250em");
     pictureTaskButton.pointBack(undefined, undefined, undefined, "yellow");
     pictureTaskButton.addEventListener("click", () => {
       const pG = new pictureGeneration();
@@ -140,7 +136,7 @@ export default class spellBookRender {
       "Find excess image"
     );
     chosePicture.positioning(undefined, "inline-block");
-    chosePicture.setMargins("3em", "15.625em");
+    chosePicture.setMargins("2em", "15.625em");
     chosePicture.pointBack(undefined, undefined, undefined, "yellow");
     chosePicture.addEventListener("click", () => {
       const cPG = new chosePictureGeneration();
@@ -158,7 +154,7 @@ export default class spellBookRender {
       "Cars logo"
     );
     choseLogo.positioning(undefined, "inline-block");
-    choseLogo.setMargins("3em", "6.250em");
+    choseLogo.setMargins("2em", "6.250em");
     choseLogo.pointBack(undefined, undefined, undefined, "yellow");
     choseLogo.addEventListener("click", () => {
       const cW = new logoGeneration();

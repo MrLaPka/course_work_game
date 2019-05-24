@@ -27,7 +27,7 @@ export default class compoundWordsGeneration {
     let newCompounds = new randomCompounds(this.words);
     numberTask = newCompounds.random();
     let taskWindow = new objectOnThePage("div");
-    taskWindow.create("70%", "90%", undefined, "taskWindow", "auto", undefined);
+    taskWindow.create("100%", "100%", undefined, "taskWindow", "auto", undefined);
     taskWindow.positioning("1100", "block", "absolute", "center");
     taskWindow.setDistance("0", "0", "0", "0");
     taskWindow.pointBack(

@@ -79,6 +79,7 @@ class monsterRender {
 
     createMonster(monster) {
         monster.create(undefined, undefined, undefined, 'monster');
+        monster.setMargins('14em');
         monster.positioning(undefined, undefined, "absolute");
         monster.appendChild(this.Head);
         monster.appendChild(this.Body);

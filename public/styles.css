@@ -1,5 +1,5 @@
 *{
-    font-family: matura mt script capitals;
+    font-family: Lobster,sans-serif;
 }
 html, body {
     margin:  0%;
@@ -15,18 +15,34 @@ textarea{
     font-size: 1.875em;
 }
 
-table{
-    margin: auto;
-    width: 25.000em;
-    border: 0.313em solid green;
-    color: #fff;
+table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 14px;
+  width: 640px;
+  text-align: left;
+  border-collapse: collapse;
+  background: #252F48;
+  margin: 10px;
 }
-
-td{
-    text-align: center;
-    border: 0.250em solid green;
-    height: 3.125em;
-    font-size: 1.875em;
+table th {
+  color: #EDB749;
+  border-bottom: 1px solid #37B5A5;
+  padding: 12px 17px;
+}
+table td {
+  color: #CAD4D6;
+  border-bottom: 1px solid #37B5A5;
+  border-right:1px solid #37B5A5;
+  padding: 7px 17px;
+}
+table tr:last-child td {
+  border-bottom: none;
+}
+table td:last-child {
+  border-right: none;
+}
+table tr:hover td {
+  text-decoration: underline;
 }
 
 h1{
@@ -39,13 +55,14 @@ button, #enterButton, #registerButton{
     transition: 1s;
     background-color: yellow;
     font-size: 0.938em;
+    font-weight: bold;
 }
 
 button:hover, #enterButton:hover, #registerButton:hover{
     cursor: pointer;
     color:aqua;
     transition: 1s;
-    background-color:violet;
+    background-color:green;
 }
 
 
@@ -199,6 +216,13 @@ button:hover, #enterButton:hover, #registerButton:hover{
 }
 
 .chosePicture img:hover{
+    cursor: pointer;
+    border: 1px solid #d3d3d3;
+    transform: translate(-15px, -15px);
+    box-shadow: 10px 15px 15px #d3d3d3;
+}
+
+.right_picture{
     cursor: pointer;
     border: 1px solid #d3d3d3;
     transform: translate(-15px, -15px);
