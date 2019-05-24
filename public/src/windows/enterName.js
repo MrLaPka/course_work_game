@@ -75,7 +75,7 @@ export default class enterName {
         undefined,
         "errorEnter",
         "auto",
-        "Incorrect name!"
+        "Incorrect name or password!"
       );
       errorEnter.positioning(undefined, "block");
       errorEnter.fonts("1.2em", "sans-serif");

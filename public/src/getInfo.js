@@ -9,7 +9,7 @@ export default class getInfo {
       if (JSON.parse(request.response).res === "undefined") {
         document.getElementById("errorEnter").style.visibility = "visible";
         document.getElementById("enterH2").style.borderColor = "red";
-        document.getElementById("errorEnter").innerText = "Incorrect name!";
+        document.getElementById("errorEnter").innerText = "Incorrect name or password!";
       } else if (JSON.parse(request.response).id !== 0) {
         this.users = JSON.parse(request.response).id;
 
