@@ -206,13 +206,13 @@ app.post("/sendToMail", jsonParser, function (request, response) {
     port: 465,
     secure: true, //true --> will use ssl
     auth: {
-      user: 'ieghor-popov-2000@mail.ru',//Gh_nadya@mail.ru
-      pass: 'Gb7k854A'//
+      user: 'u email',//
+      pass: 'u password'//
     }
   });
 
   const mailOptions = {
-    from: 'Game <ieghor-popov-2000@mail.ru>',
+    from: 'Game <u email>',
     to: `${request.body.mail}`,
     subject: 'You data',
     text: 'Do not disclose your data to anyone!',
